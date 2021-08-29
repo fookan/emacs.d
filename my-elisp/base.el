@@ -37,7 +37,11 @@
 (setq inhibit-startup-message t)
 
 ;; ツールバーを消す
-;(tool-bar-mode -1)
+;; mac=dawrin
+;; windows=windows-nt
+;; linux=gnu/linux
+(when (eq system-type 'darwin)
+  (tool-bar-mode -1))
 
 ; メニューを消す
 (menu-bar-mode -1)
