@@ -37,7 +37,11 @@
 (setq inhibit-startup-message t)
 
 ;; ツールバーを消す
-;(tool-bar-mode -1)
+;; mac=dawrin
+;; windows=windows-nt
+;; linux=gnu/linux
+(when (eq system-type 'darwin)
+  (tool-bar-mode -1))
 
 ; メニューを消す
 (menu-bar-mode -1)
@@ -121,10 +125,19 @@
 ;; (define-key global-map (kbd "C-SPC") 'toggle-input-method) ;
 ;; (global-set-key [?\C-\ ] 'toggle-input-method)
 
+;; C-jがorgモードで上書きされるのでその対応
+(eval-after-load "org"
+  '(progn
+     (define-key org-mode-map (kbd "C-j") nil)
+     ))
+
+
 (define-key global-map (kbd "C-c C-j") 'electric-newline-and-maybe-indent)
 
 ;; ミニバッファに移動した際は最初に日本語入力が無効な状態にする
 (add-hook 'minibuffer-setup-hook 'deactivate-input-method)
 
 ;; ¥の代わりにバックスラッシュを入力する
-(define-key global-map [?¥] [?\\])
+;; (define-key global-map [?¥] [?\\])
+;; (define-key global-map [¥] [¥])
+;; (define-key global-map [?\M-¥] [?\\])
