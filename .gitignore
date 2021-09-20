@@ -1,0 +1,10 @@
+# ディレクトリ
+auto-save-list/
+elpa/
+eshell/
+skk-get-jisyo/
+undohist/
+
+# ファイル
+kkcrc
+*~
