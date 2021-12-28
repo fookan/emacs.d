@@ -1,9 +1,3 @@
-;;; package
-(require 'package)
-(add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/"))
-(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
-(package-initialize)
-
 ;;; 環境を日本語、UTF-8にする
 ;(set-language-environment "Japanese")
 ;(prefer-coding-system 'utf-8)
